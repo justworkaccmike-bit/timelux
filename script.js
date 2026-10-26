@@ -1,9 +1,9 @@
 (() => {
   const PRODUCTS = [
-    { id: 'tissot-prx', name: 'Tissot PRX', spec: 'Quartz 40mm', price: 4500000, img: 'assets/img/w-tissot.webp' },
-    { id: 'citizen-tsuyosa', name: 'Citizen Tsuyosa', spec: 'Automatic 40mm', price: 4500000, img: 'assets/img/w-citizen.webp' },
-    { id: 'seiko-5', name: 'Seiko 5', spec: 'Automatic 42.5mm', price: 3800000, img: 'assets/img/w-seiko.webp' },
-    { id: 'casio-edifice', name: 'Casio Edifice', spec: 'Chronograph 44mm', price: 2200000, img: 'assets/img/w-casio.webp' },
+    { id: 'tissot-prx', name: 'Tissot PRX', spec: 'Quartz 40mm', price: 4500000 },
+    { id: 'citizen-tsuyosa', name: 'Citizen Tsuyosa', spec: 'Automatic 40mm', price: 4500000 },
+    { id: 'seiko-5', name: 'Seiko 5', spec: 'Automatic 42.5mm', price: 3800000 },
+    { id: 'casio-edifice', name: 'Casio Edifice', spec: 'Chronograph 44mm', price: 2200000 },
   ];
 
   const $ = (s, el = document) => el.querySelector(s);
@@ -56,7 +56,7 @@
         <button class="card__fav ${wish.has(p.id) ? 'is-on' : ''}" aria-label="Add ${p.name} to wishlist" aria-pressed="${wish.has(p.id)}">
           <svg class="ico"><use href="#i-heart"/></svg>
         </button>
-        <div class="card__img"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+        <div class="card__img" aria-hidden="true"><svg><use href="#i-watch"/></svg></div>
         <h3 class="card__name">${p.name}</h3>
         <p class="card__spec">${p.spec}</p>
         <p class="card__price">${formatUZS(p.price)}</p>
@@ -143,7 +143,7 @@
   function observeReveal(els) {
     els.forEach(el => io ? io.observe(el) : el.classList.add('is-in'));
   }
-  $$('.promo, .why__list li, .follow__grid a, .section-head').forEach(el => el.classList.add('reveal'));
+  $$('.promo, .why__list li, .section-head').forEach(el => el.classList.add('reveal'));
   observeReveal($$('.reveal'));
 
   /* ---------- Active nav link on scroll ---------- */
