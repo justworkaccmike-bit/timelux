@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Watch — TimeLux.Uz</title>
+  <meta name="description" content="Original watches from TimeLux.Uz, delivered across Uzbekistan.">
+  <meta name="theme-color" content="#0a1711">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@300..600&family=Tenor+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 7H6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 9h4.5l3.5 3.5V16h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5Z"/><path d="M3 8l9 5 9-5M12 13v8M7.5 5.5l9 5"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/><path d="M19 20c0 1-1.5 2-4 2h-2"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 3l9 8v10h-6v-6H9v6H3Z"/></symbol>
+    <symbol id="i-watch" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><path d="M12 9.5V12l1.5 1.5M9 6.5 9.6 2h4.8l.6 4.5M9 17.5l.6 4.5h4.8l.6-4.5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.5 4.2 2.9 11.4c-1 .4-1 1.6.1 1.9l4.6 1.4 1.8 5.5c.2.7 1.1.9 1.6.4l2.6-2.4 4.6 3.4c.6.4 1.4.1 1.6-.6l3.2-15.3c.2-.9-.6-1.6-1.5-1.5Z" fill="currentColor" stroke="none"/><path d="m8 14.5 9.5-6.5-7 7.5" stroke="#2aa3e0" stroke-width="1.3"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="top">
+  <div class="container header__inner">
+    <button class="icon-btn header__burger" id="menuOpen" aria-label="Open menu">
+      <svg class="ico"><use href="#i-menu"/></svg>
+    </button>
+
+    <a href="index.html#top" class="logo" aria-label="TimeLux.Uz home">
+      <img src="assets/img/logo.png" alt="TimeLux.Uz" width="62" height="62">
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#top" class="nav__link">Home</a>
+      <a href="index.html#featured" class="nav__link is-active">Shop</a>
+      <a href="index.html#brands" class="nav__link">Brands</a>
+      <a href="index.html#why" class="nav__link">About</a>
+      <a href="index.html#contact" class="nav__link">Contact</a>
+    </nav>
+
+    <div class="header__actions">
+      <form class="search" role="search" id="searchForm">
+        <svg class="ico"><use href="#i-search"/></svg>
+        <input type="search" placeholder="Search watches..." aria-label="Search watches" id="searchInput">
+      </form>
+      <button class="icon-btn header__search-toggle" id="searchToggle" aria-label="Search">
+        <svg class="ico"><use href="#i-search"/></svg>
+      </button>
+      <button class="icon-btn header__wish" aria-label="Wishlist">
+        <svg class="ico"><use href="#i-heart"/></svg>
+        <span class="badge badge--wish" data-wish-count hidden>0</span>
+      </button>
+      <button class="icon-btn" aria-label="Cart">
+        <svg class="ico"><use href="#i-cart"/></svg>
+        <span class="badge" data-cart-count>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <img src="assets/img/logo.png" alt="TimeLux.Uz" width="56" height="56">
+      <button class="icon-btn" id="menuClose" aria-label="Close menu"><svg class="ico"><use href="#i-close"/></svg></button>
+    </div>
+    <a href="index.html#top">Home</a>
+    <a href="index.html#featured">Shop</a>
+    <a href="index.html#brands">Brands</a>
+    <a href="index.html#why">About</a>
+    <a href="index.html#contact">Contact</a>
+    <div class="drawer__social">
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="soc soc--ig" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+      <a href="https://t.me" target="_blank" rel="noopener" class="soc soc--tg" aria-label="Telegram"><svg><use href="#i-tg"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<main class="pdp">
+  <div class="container" id="pdp"><!-- rendered by product.js --></div>
+
+  <!-- ============ RELATED ============ -->
+  <section class="related" id="relatedSection">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">You May Also Like</h2>
+        <a href="index.html#featured" class="link-gold">View All <svg class="ico ico--sm"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="products" id="related"><!-- rendered by product.js --></div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="contact">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <img src="assets/img/logo.png" alt="TimeLux.Uz" width="120" height="120" loading="lazy">
+      <p>Original Watches. A Better You.</p>
+    </div>
+    <div>
+      <h5>Quick Links</h5>
+      <a href="index.html#top">Home</a><a href="index.html#featured">Shop</a><a href="index.html#brands">Brands</a><a href="index.html#why">About</a><a href="index.html#contact">Contact</a>
+    </div>
+    <div>
+      <h5>Customer Service</h5>
+      <a href="index.html#contact">Delivery</a><a href="index.html#contact">Returns &amp; Warranty</a><a href="index.html#contact">Payment Methods</a><a href="index.html#contact">FAQs</a><a href="index.html#contact">Contact Us</a>
+    </div>
+    <div>
+      <h5>Connect With Us</h5>
+      <div class="footer__social">
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="soc soc--ig" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+        <a href="https://t.me" target="_blank" rel="noopener" class="soc soc--tg" aria-label="Telegram"><svg><use href="#i-tg"/></svg></a>
+      </div>
+      <p class="footer__loc"><svg class="ico ico--sm"><use href="#i-pin"/></svg> Tashkent, Uzbekistan</p>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© 2026 TimeLux.uz. All rights reserved.</span>
+    <span><a href="index.html#contact">Privacy Policy</a><a href="index.html#contact">Terms &amp; Conditions</a></span>
+  </div>
+  <div class="container footer__credit">
+    Made by <a href="https://artlife-studio.uz/" target="_blank" rel="noopener">ArtLife Web Studio</a>
+  </div>
+</footer>
+
+<!-- Mobile bottom nav -->
+<nav class="tabbar" aria-label="Mobile">
+  <a href="index.html#top"><svg class="ico"><use href="#i-home"/></svg>Home</a>
+  <a href="index.html#featured" class="is-active"><svg class="ico"><use href="#i-watch"/></svg>Shop</a>
+  <a href="index.html#brands"><svg class="ico"><use href="#i-grid"/></svg>Brands</a>
+  <a href="index.html#featured" class="tabbar__cart"><svg class="ico"><use href="#i-cart"/></svg><span class="badge" data-cart-count>0</span>Cart</a>
+  <a href="index.html#contact"><svg class="ico"><use href="#i-user"/></svg>Profile</a>
+</nav>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script src="product.js"></script>
+</body>
+</html>

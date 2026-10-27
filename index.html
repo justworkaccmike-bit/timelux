@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@300..600&family=Tenor+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -176,25 +176,21 @@
   <!-- ============ COLLECTIONS ============ -->
   <section class="collections" aria-label="Collections">
     <div class="container collections__grid">
-      <a href="#featured" class="promo promo--new">
+      <a href="#featured" class="promo promo--new" aria-label="New Arrivals">
+        <img class="promo__banner" src="assets/img/banners/new.jpg" alt="" loading="lazy">
         <svg class="promo__icon" aria-hidden="true"><use href="#i-watch"/></svg>
-        <div class="promo__text">
-          <h3>New Arrivals</h3>
-          <p>Discover the latest models</p>
-          <span class="btn btn--gold btn--sm">Shop Now <svg class="ico ico--sm"><use href="#i-arrow"/></svg></span>
-        </div>
       </a>
-      <a href="#featured" class="promo promo--men">
+      <a href="#featured" class="promo promo--men" aria-label="Men’s Collection">
+        <img class="promo__banner" src="assets/img/banners/men.jpg" alt="" loading="lazy">
         <svg class="promo__icon" aria-hidden="true"><use href="#i-watch"/></svg>
-        <div class="promo__text"><h3>Men’s<br>Collection</h3><span class="promo__link">Explore <svg class="ico ico--sm"><use href="#i-arrow"/></svg></span></div>
       </a>
-      <a href="#featured" class="promo promo--women">
+      <a href="#featured" class="promo promo--women" aria-label="Women’s Collection">
+        <img class="promo__banner" src="assets/img/banners/women.jpg" alt="" loading="lazy">
         <svg class="promo__icon" aria-hidden="true"><use href="#i-watch"/></svg>
-        <div class="promo__text"><h3>Women’s<br>Collection</h3><span class="promo__link">Explore <svg class="ico ico--sm"><use href="#i-arrow"/></svg></span></div>
       </a>
-      <a href="#featured" class="promo promo--best">
+      <a href="#featured" class="promo promo--best" aria-label="Best Sellers">
+        <img class="promo__banner" src="assets/img/banners/best.jpg" alt="" loading="lazy">
         <svg class="promo__icon" aria-hidden="true"><use href="#i-watch"/></svg>
-        <div class="promo__text"><h3>Best Sellers</h3><span class="promo__link">Shop Now <svg class="ico ico--sm"><use href="#i-arrow"/></svg></span></div>
       </a>
     </div>
   </section>
@@ -262,6 +258,9 @@
     <span>© 2026 TimeLux.uz. All rights reserved.</span>
     <span><a href="#contact">Privacy Policy</a><a href="#contact">Terms &amp; Conditions</a></span>
   </div>
+  <div class="container footer__credit">
+    Made by <a href="https://artlife-studio.uz/" target="_blank" rel="noopener">ArtLife Web Studio</a>
+  </div>
 </footer>
 
 <!-- Mobile bottom nav -->
@@ -275,6 +274,8 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="data.js"></script>
+<script src="common.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
