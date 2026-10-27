@@ -9,7 +9,7 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const formatUZS = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' UZS';
+  const formatUZS = n => !n ? 'Price on request' : n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' UZS';
   const productUrl = p => `product.html?id=${encodeURIComponent(p.id)}`;
   const watchIcon = '<svg aria-hidden="true"><use href="#i-watch"/></svg>';
   const productMedia = p => p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy">` : watchIcon;

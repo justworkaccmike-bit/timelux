@@ -29,10 +29,10 @@ create policy "admins can see their own row" on public.admins
 -- ---------- Products ----------
 create table if not exists public.products (
   id          text primary key check (id ~ '^[a-z0-9-]{1,60}$'),
-  brand       text not null check (char_length(brand) between 1 and 40),
+  brand       text not null default '' check (char_length(brand) <= 40),
   name        text not null check (char_length(name) between 1 and 80),
   spec        text not null default '' check (char_length(spec) <= 60),
-  price       bigint not null check (price >= 0),
+  price       bigint check (price >= 0),  -- empty = "Price on request"
   description text not null default '' check (char_length(description) <= 2000),
   specs       jsonb not null default '{}'::jsonb,
   image_url   text,

@@ -4,7 +4,7 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const formatUZS = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' UZS';
+  const formatUZS = n => !n ? 'Price on request' : n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' UZS';
 
   const SPEC_TEMPLATE = ['Movement', 'Case size', 'Case material', 'Dial', 'Crystal', 'Water resistance', 'Strap', 'Functions'];
   const BANNER_NAMES = { new: 'New Arrivals', men: 'Men’s Collection', women: 'Women’s Collection', best: 'Best Sellers' };
@@ -220,7 +220,7 @@
     f.name.value = p?.name || '';
     f.brand.value = p?.brand || '';
     f.spec.value = p?.spec || '';
-    f.price.value = p ? formatUZS(p.price).replace(' UZS', '') : '';
+    f.price.value = p?.price ? formatUZS(p.price).replace(' UZS', '') : '';
     f.id.value = p?.id || '';
     f.id.readOnly = !!p;
     $('#slugHint').textContent = p
@@ -280,7 +280,7 @@
       name: f.name.value.trim(),
       brand: f.brand.value.trim(),
       spec: f.spec.value.trim(),
-      price: parsePrice(f.price.value),
+      price: parsePrice(f.price.value) || null,
       description: f.description.value.trim(),
       specs,
       image: photo,
@@ -290,9 +290,6 @@
 
   function validate(p) {
     if (!p.name) return ['name', 'Enter the product name.'];
-    if (!p.brand) return ['brand', 'Enter the brand.'];
-    if (!p.spec) return ['spec', 'Enter a short spec, for example “Automatic 40mm”.'];
-    if (!p.price || p.price < 1000) return ['price', 'Enter the price in UZS, for example 4 500 000.'];
     if (!editing && products.some(x => x.id === p.id)) return ['id', 'Another product already uses this page address. Change it slightly.'];
     return null;
   }

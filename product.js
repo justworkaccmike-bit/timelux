@@ -50,9 +50,9 @@
         </div>
 
         <div class="pdp__info">
-          <p class="pdp__brand">${esc(p.brand)}</p>
+          ${p.brand ? `<p class="pdp__brand">${esc(p.brand)}</p>` : ''}
           <h1 class="pdp__title">${esc(p.name)}</h1>
-          <p class="pdp__spec">${esc(p.spec)}</p>
+          ${p.spec ? `<p class="pdp__spec">${esc(p.spec)}</p>` : ''}
           <p class="pdp__price">${formatUZS(p.price)}</p>
           <p class="pdp__stock"><span class="pdp__dot"></span>In stock · Ready to ship</p>
           <div class="pdp__lead">${paragraphs(p.description)}</div>
@@ -94,7 +94,7 @@
         </div>
         <div class="tabs__panel" role="tabpanel" id="tab-specs" aria-labelledby="t-specs" hidden>
           <table class="specs">
-            <tr><th>Brand</th><td>${esc(p.brand)}</td></tr>
+            ${p.brand ? `<tr><th>Brand</th><td>${esc(p.brand)}</td></tr>` : ''}
             ${specs.map(([k, v]) => `<tr><th>${esc(k)}</th><td>${esc(v)}</td></tr>`).join('')}
           </table>
         </div>

@@ -112,12 +112,12 @@
   const check = ({ data, error }) => { if (error) throw new Error(error.message); return data; };
 
   const fromRow = r => ({
-    id: r.id, brand: r.brand, name: r.name, spec: r.spec, price: Number(r.price),
+    id: r.id, brand: r.brand, name: r.name, spec: r.spec, price: r.price == null ? null : Number(r.price),
     description: r.description || '', specs: r.specs || {}, image: r.image_url || '',
     published: r.published, sort: r.sort_order,
   });
   const toRow = p => ({
-    id: p.id, brand: p.brand, name: p.name, spec: p.spec, price: p.price,
+    id: p.id, brand: p.brand || '', name: p.name, spec: p.spec || '', price: p.price || null,
     description: p.description, specs: p.specs, image_url: p.image || null, published: p.published,
   });
 
