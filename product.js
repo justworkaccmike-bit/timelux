@@ -43,7 +43,6 @@
       <div class="pdp__grid">
         <div class="pdp__media">
           <div class="pdp__stage ${p.image ? 'has-photo' : ''}">
-            <span class="pdp__tag"><svg class="ico ico--sm"><use href="#i-shield"/></svg> 100% Original</span>
             ${p.image
               ? `<img class="pdp__photo" src="${esc(p.image)}" alt="${esc(p.name)}">`
               : '<svg class="pdp__watch" aria-hidden="true"><use href="#i-watch"/></svg>'}
@@ -77,7 +76,7 @@
 
           <ul class="pdp__perks">
             <li><svg class="ico"><use href="#i-truck"/></svg>Fast delivery across Uzbekistan</li>
-            <li><svg class="ico"><use href="#i-shield"/></svg>100% original, from official sources</li>
+            <li><svg class="ico"><use href="#i-shield"/></svg>Trusted quality, from official sources</li>
             <li><svg class="ico"><use href="#i-card"/></svg>Cash, card or online payment</li>
           </ul>
         </div>
