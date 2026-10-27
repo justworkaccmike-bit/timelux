@@ -1,11 +1,18 @@
 // Shared by every page: cart, wishlist, toast, drawer, product cards, reveal-on-scroll.
 (() => {
-  const PRODUCTS = window.TL_PRODUCTS || [];
+  // Filled once the catalogue loads (Supabase, or demo data); pages wait on TL.ready.
+  const PRODUCTS = [];
+  const ready = window.TLApi.listProducts()
+    .catch(() => window.TL_PRODUCTS || [])
+    .then(list => { PRODUCTS.push(...list); });
 
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const formatUZS = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' UZS';
   const productUrl = p => `product.html?id=${encodeURIComponent(p.id)}`;
+  const watchIcon = '<svg aria-hidden="true"><use href="#i-watch"/></svg>';
+  const productMedia = p => p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy">` : watchIcon;
 
   // Storage can be unavailable (private mode, blocked site data) — fail soft.
   const store = {
@@ -61,13 +68,13 @@
 
   /* ---------- Product cards ---------- */
   const cardHTML = p => `
-    <article class="card reveal" data-id="${p.id}">
-      <button class="card__fav ${wish.has(p.id) ? 'is-on' : ''}" aria-label="Add ${p.name} to wishlist" aria-pressed="${wish.has(p.id)}">
+    <article class="card reveal" data-id="${esc(p.id)}">
+      <button class="card__fav ${wish.has(p.id) ? 'is-on' : ''}" aria-label="Add ${esc(p.name)} to wishlist" aria-pressed="${wish.has(p.id)}">
         <svg class="ico"><use href="#i-heart"/></svg>
       </button>
-      <a href="${productUrl(p)}" class="card__img" aria-label="View ${p.name}"><svg aria-hidden="true"><use href="#i-watch"/></svg></a>
-      <h3 class="card__name"><a href="${productUrl(p)}">${p.name}</a></h3>
-      <p class="card__spec">${p.spec}</p>
+      <a href="${productUrl(p)}" class="card__img ${p.image ? 'has-photo' : ''}" aria-label="View ${esc(p.name)}">${productMedia(p)}</a>
+      <h3 class="card__name"><a href="${productUrl(p)}">${esc(p.name)}</a></h3>
+      <p class="card__spec">${esc(p.spec)}</p>
       <p class="card__price">${formatUZS(p.price)}</p>
       <button class="btn btn--gold card__add"><svg class="ico ico--sm"><use href="#i-cart"/></svg> Add to Cart</button>
     </article>`;
@@ -131,7 +138,7 @@
   }
 
   window.TL = {
-    PRODUCTS, $, $$, formatUZS, productUrl, store,
+    PRODUCTS, ready, $, $$, esc, formatUZS, productUrl, productMedia, store,
     wish, addToCart, toggleWish, showToast, renderCounts,
     renderCards, bindCards, observeReveal,
   };

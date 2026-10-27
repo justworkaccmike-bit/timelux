@@ -177,19 +177,19 @@
   <section class="collections" aria-label="Collections">
     <div class="container collections__grid">
       <a href="#featured" class="promo promo--new" aria-label="New Arrivals">
-        <img class="promo__banner" src="assets/img/banners/new.jpg" alt="" loading="lazy">
+        <img class="promo__banner" data-slot="new" alt="">
         <svg class="promo__icon" aria-hidden="true"><use href="#i-watch"/></svg>
       </a>
       <a href="#featured" class="promo promo--men" aria-label="Men’s Collection">
-        <img class="promo__banner" src="assets/img/banners/men.jpg" alt="" loading="lazy">
+        <img class="promo__banner" data-slot="men" alt="">
         <svg class="promo__icon" aria-hidden="true"><use href="#i-watch"/></svg>
       </a>
       <a href="#featured" class="promo promo--women" aria-label="Women’s Collection">
-        <img class="promo__banner" src="assets/img/banners/women.jpg" alt="" loading="lazy">
+        <img class="promo__banner" data-slot="women" alt="">
         <svg class="promo__icon" aria-hidden="true"><use href="#i-watch"/></svg>
       </a>
       <a href="#featured" class="promo promo--best" aria-label="Best Sellers">
-        <img class="promo__banner" src="assets/img/banners/best.jpg" alt="" loading="lazy">
+        <img class="promo__banner" data-slot="best" alt="">
         <svg class="promo__icon" aria-hidden="true"><use href="#i-watch"/></svg>
       </a>
     </div>
@@ -274,7 +274,9 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="config.js"></script>
 <script src="data.js"></script>
+<script src="api.js"></script>
 <script src="common.js"></script>
 <script src="script.js"></script>
 </body>

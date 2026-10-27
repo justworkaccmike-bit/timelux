@@ -247,6 +247,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 .card__img { aspect-ratio: 4 / 5; display: grid; place-items: center; overflow: hidden; border-radius: 10px; background: #f2ede3; }
 .card__img svg { width: 44%; height: 44%; fill: none; stroke: var(--gold-2); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; transition: transform .5s; }
 .card:hover .card__img svg { transform: scale(1.08); }
+.card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.card:hover .card__img img { transform: scale(1.05); }
 .card__fav {
   position: absolute; top: 14px; right: 14px; z-index: 1;
   width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
@@ -377,8 +379,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   stroke-linecap: round; stroke-linejoin: round;
   animation: float 7s ease-in-out infinite alternate;
 }
+.pdp__photo { width: 100%; height: 100%; object-fit: cover; }
+.pdp__lead p + p { margin-top: 12px; }
 .pdp__tag {
-  position: absolute; top: 18px; left: 18px;
+  position: absolute; top: 18px; left: 18px; z-index: 1;
   display: inline-flex; align-items: center; gap: 6px;
   padding: 7px 12px; border-radius: 20px;
   background: var(--green-900); color: var(--gold-1); font-family: var(--label); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase;

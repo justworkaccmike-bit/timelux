@@ -1,6 +1,6 @@
 // Home page. Shared helpers (cart, wishlist, cards, drawer) live in common.js.
 (() => {
-  const { PRODUCTS, $, $$, renderCards, bindCards, observeReveal } = window.TL;
+  const { PRODUCTS, ready, $, $$, renderCards, bindCards, observeReveal } = window.TL;
 
   /* ---------- Products ---------- */
   const grid = $('#products');
@@ -36,15 +36,16 @@
   restart();
 
   /* ---------- Promo banners ---------- */
-  // A card shows its banner only once the file loads; missing files keep the icon look.
-  $$('.promo__banner').forEach(img => {
-    const show = () => img.closest('.promo').classList.add('has-banner');
-    if (img.complete && img.naturalWidth) show();
-    else {
+  // Images come from the admin panel (or the default files); a card shows its banner
+  // only once the image loads, and keeps the icon look if it fails.
+  window.TLApi.getBanners()
+    .catch(() => window.TLApi.DEFAULT_BANNERS)
+    .then(banners => $$('.promo__banner').forEach(img => {
+      const show = () => img.closest('.promo').classList.add('has-banner');
       img.addEventListener('load', show, { once: true });
       img.addEventListener('error', () => img.remove(), { once: true });
-    }
-  });
+      img.src = banners[img.dataset.slot];
+    }));
 
   /* ---------- Reveal on scroll ---------- */
   $$('.promo, .why__list li, .section-head').forEach(el => el.classList.add('reveal'));
@@ -65,13 +66,15 @@
   window.addEventListener('scroll', syncNav, { passive: true });
 
   // Searches started on other pages arrive as index.html?q=...
-  const q = new URLSearchParams(location.search).get('q');
-  if (q) {
-    searchInput.value = q;
-    renderProducts(q);
-    requestAnimationFrame(() => $('#featured').scrollIntoView());
-  } else {
-    renderProducts();
-  }
+  ready.then(() => {
+    const q = new URLSearchParams(location.search).get('q');
+    if (q) {
+      searchInput.value = q;
+      renderProducts(q);
+      requestAnimationFrame(() => $('#featured').scrollIntoView());
+    } else {
+      renderProducts(searchInput.value);
+    }
+  });
   syncNav();
 })();
